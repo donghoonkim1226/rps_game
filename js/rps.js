@@ -7,8 +7,9 @@ $(document).ready(function() {
 
 	// After user click, comuputer choice will be randomized //
 	
-	$(document).on("click", function() {
+	$(".btn-info").on("click", function() {
 		var computerChoice = Math.floor(Math.random() * 3);
+		console.log(buttonChoices[computerChoice]) 
 		if (computerChoice === 0) {
 		computerChoice = "rock";
 		} else if(computerChoice === 1) {
@@ -18,6 +19,7 @@ $(document).ready(function() {
 		}; 
 
 		var userChoice = $(this).data("choice")
+		console.log(userChoice)
 		compareChoice(userChoice, computerChoice);
 		$("#userChoice").html(userChoice);
 		$("#computerChoice").html(computerChoice);
