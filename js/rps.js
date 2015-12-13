@@ -1,27 +1,52 @@
 $(document).ready(function() {
-	var buttonChoices = ["Rock", "Paper", "Scissors"];
+	var buttonChoices = ["rock", "paper", "scissors"];
+	var computerScore = "0";
+	var userScore = "0";
+	var gameTies = "0";
+	var roundCount = "0";
 
-	function randomButton() {
-		var randomSign = Math.floor(Math.random() * buttonChoices.length);
-		$(".btn-info").html(buttonChoices[randomSign]).attr("data-selection", randomSign);
-	}
-
-	$(".btn-info").on("click", function() {
-		alert ("this is working")
-		var computerChoice = Math.floor(Math.random() * buttonChoices.length);
-		var userChoice = parseInt($(this).attr("data-selection"));
-
-		if(computerChoice === userChoice) {
-			$(".modal-body").html("Draw! No one wins!");
-		} else if(computerChoice === 0 && userChoice === 1) {
-			$(".modal-body").html("Computer Wins! You lose!");
+	// After user click, comuputer choice will be randomized //
+	
+	$(document).on("click", function() {
+		var computerChoice = Math.floor(Math.random() * 3);
+		if (computerChoice === 0) {
+		computerChoice = "rock";
+		} else if(computerChoice === 1) {
+		computerChoice = "paper";
 		} else {
-			$(".modal-body").html("You win!");
-		}	
-		});
+		computerChoice = "scissors";
+		}; 
 
-		randomButton();
+		var userChoice = $(this).data("choice")
+		compareChoice(userChoice, computerChoice);
+		$("#userChoice").html(userChoice);
+		$("#computerChoice").html(computerChoice);
+		roundCount++;
+		$("#roundCount").html(roundCount);
 	});
 
-	randomButton();
+	var compareChoice = function(userChoice, computerChoice) {
+		if (userChoice === computerChoice) {
+		alert ("Tie!");
+		} else if (userChoice === "rock") {
+		if (computerChoice === "scissors") {
+		alert ("You win!");
+		} else {
+		alert ("You lose.");
+		};
+		} else if (userChoice === "paper") {
+		if (computerChoice === "rock") {
+		alert ("You win!");
+		} else {
+		alert ("You lose.");
+		};
+		} else if (userChoice === "scissors") {
+		if (computerChoice === "paper") {
+		alert ("You win!");
+		} else {
+		alert ("You lose");
+		};
+	};
+};
+
 });
