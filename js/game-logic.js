@@ -3,7 +3,8 @@ $(document).ready(function() {
 	var computerScore = "0";
 	var userScore = "0";
 	var roundCount = "0";
-	var drawCount = "0";	
+	var drawCount = "0";
+	$("#restartButton").hide ();
 
 	// After user click, comuputer choice will be randomized //
 	
@@ -81,6 +82,8 @@ $(document).ready(function() {
 
 	if (roundCount === 5) {
 			$("#button-row").hide ();
+			$("#restartButton").show ();
+				
 			if (userScore > computerScore) {
 				$("#game-screen").html("YOU WIN! YOUR STRENGTH IS EQUAL TO THAT OF YOUR WILL TO WIN!");
 			} else if (userScore < computerScore) {
