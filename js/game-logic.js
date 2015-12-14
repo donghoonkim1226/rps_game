@@ -26,7 +26,6 @@ $(document).ready(function() {
 	var compareChoice = function(userChoice, computerChoice) {
 		if (userChoice === computerChoice) {
 			tie();
-			roundUp();
 		} else if (userChoice === "rock") {
 			if (computerChoice === "scissors") {
 			userWin();
@@ -54,11 +53,6 @@ $(document).ready(function() {
 	};
 };
 	
-
-	function tie() {
-		$("#game-screen").html("DRAW!");
-	};
-
 	function userWin() {
 		userScore++;
 		console.log(userScore);
@@ -78,17 +72,23 @@ $(document).ready(function() {
 		console.log(roundCount);
 		$("#roundCount").html(roundCount);
 
-	if (roundCount === 10) {
-		$("#game-screen").html("GAME OVER!!");
+	if (roundCount === 5) {
+		$("#game-screen").html("GAME OVER!");
 			if (userScore > computerScore) {
-				$("#game-screen").append("USER WIN!");
+				$("#game-screen").html("USER WIN! - YOUR STRENGTH IS EQUAL TO THAT OF YOUR WILL TO WIN!");
 			} else if (userScore < computerScore) {
-				$("#game-screen").append("YOU LOSE!");
+				$("#game-screen").html("YOU LOSE! - YOU DID QUITE WELL,BUT YOU NEED MORE TRAINING TO DEFEAT ME!");
 			} else if (userScore == computerScore) {
-				$("#game-screen").html("NO ONE WINS! PLAY AGAIN.");
-			}
+				$("#game-screen").html("NO ONE WINS, PLAY AGAIN!");
+      }
+      userScore = 0;
+      computerScore = 0;
+      roundCount = 0;
+      userChoice = "";
+      computerChoice = "";
+      $("#userScore").html(userScore);
+      $("#computerScore").html(computerScore);
+      $("#roundCount").html(roundCount);
 		}
 	};
-
-
 });
