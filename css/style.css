@@ -2,6 +2,10 @@
 	font-family: 'Press Start 2P', cursive;
 }
 
+#top-panel {
+	background-color: black;
+	color: white;
+}
 
 body {
 	background-color: black;
@@ -28,7 +32,7 @@ h2 {
 
 #ryu-left {
 	position: absolute;
-	right: 100px;
+	right: 50px;
 	height: 200px;
 	width: auto;
 	padding: 10px;
@@ -37,7 +41,7 @@ h2 {
 
 #charlie-right {
 	position: absolute;
-	left: 40px;
+	left: -20px;
 	height: 200px;
 	width: auto;
 	padding: 10px;

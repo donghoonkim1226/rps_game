@@ -79,7 +79,7 @@ $(document).ready(function() {
 		console.log(roundCount);
 		$("#roundCount").html(roundCount);
 
-	if (roundCount === 5) {
+	if (roundCount === 6) {
 		$("#game-screen").html("GAME OVER!");
 			if (userScore > computerScore) {
 				$("#game-screen").html("YOU WIN! YOUR STRENGTH IS EQUAL TO THAT OF YOUR WILL TO WIN!");
