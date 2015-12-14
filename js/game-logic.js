@@ -3,6 +3,7 @@ $(document).ready(function() {
 	var computerScore = "0";
 	var userScore = "0";
 	var roundCount = "0";
+	var drawCount = "0";
 
 	// After user click, comuputer choice will be randomized //
 	
@@ -26,6 +27,7 @@ $(document).ready(function() {
 	var compareChoice = function(userChoice, computerChoice) {
 		if (userChoice === computerChoice) {
 			tie();
+			roundUp();
 		} else if (userChoice === "rock") {
 			if (computerChoice === "scissors") {
 			userWin();
@@ -52,19 +54,24 @@ $(document).ready(function() {
 		};
 	};
 };
-	
+	function tie() {
+		drawCount++;
+		$("#drawCount").html(drawCount);		
+		$("#game-screen").html("DRAW - NO ONE WINS!");	
+	};
+
 	function userWin() {
 		userScore++;
 		console.log(userScore);
 		$("#userScore").html(userScore);
-		$("#game-screen").html("USER WIN!");
+		$("#game-screen").html("YOU WIN!");
 	};
 
 	function computerWin() {
 		computerScore++;
 		console.log(computerScore);
 		$("#computerScore").html(computerScore);
-		$("#game-screen").html("COMPUTER WIN!");
+		$("#game-screen").html("CHARLIE WINS!");
 	};
 
 	function roundUp() {
@@ -75,20 +82,22 @@ $(document).ready(function() {
 	if (roundCount === 5) {
 		$("#game-screen").html("GAME OVER!");
 			if (userScore > computerScore) {
-				$("#game-screen").html("USER WIN! - YOUR STRENGTH IS EQUAL TO THAT OF YOUR WILL TO WIN!");
+				$("#game-screen").html("YOU WIN! YOUR STRENGTH IS EQUAL TO THAT OF YOUR WILL TO WIN!");
 			} else if (userScore < computerScore) {
-				$("#game-screen").html("YOU LOSE! - YOU DID QUITE WELL,BUT YOU NEED MORE TRAINING TO DEFEAT ME!");
+				$("#game-screen").html("YOU LOSE! YOU DID QUITE WELL,BUT YOU NEED MORE TRAINING TO DEFEAT ME!");
 			} else if (userScore == computerScore) {
 				$("#game-screen").html("NO ONE WINS, PLAY AGAIN!");
       }
       userScore = 0;
       computerScore = 0;
       roundCount = 0;
+      drawCount = 0;
       userChoice = "";
       computerChoice = "";
       $("#userScore").html(userScore);
       $("#computerScore").html(computerScore);
       $("#roundCount").html(roundCount);
+      $("#drawCount").html(drawCount);
 		}
 	};
 });
