@@ -26,6 +26,7 @@ $(document).ready(function() {
 	var compareChoice = function(userChoice, computerChoice) {
 		if (userChoice === computerChoice) {
 			tie();
+			roundUp();
 		} else if (userChoice === "rock") {
 			if (computerChoice === "scissors") {
 			userWin();
@@ -76,8 +77,18 @@ $(document).ready(function() {
 		roundCount++;
 		console.log(roundCount);
 		$("#roundCount").html(roundCount);
-	};
 
+	if (roundCount === 10) {
+		$("#game-screen").html("GAME OVER!!");
+			if (userScore > computerScore) {
+				$("#game-screen").append("USER WIN!");
+			} else if (userScore < computerScore) {
+				$("#game-screen").append("YOU LOSE!");
+			} else if (userScore == computerScore) {
+				$("#game-screen").html("NO ONE WINS! PLAY AGAIN.");
+			}
+		}
+	};
 
 
 });
