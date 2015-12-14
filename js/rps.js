@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 	// After user click, comuputer choice will be randomized //
 	
-	$(".btn-info").on("click", function() {
+	$(".btn-default").on("click", function() {
 		var computerChoice = Math.floor(Math.random() * 3);
 		console.log(buttonChoices[computerChoice]) 
 		if (computerChoice === 0) {

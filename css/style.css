@@ -1,5 +1,19 @@
+* {
+	font-family: 'Press Start 2P', cursive;
+}
+
+
 body {
-	background-color: white;
+	background-color: black;
+}
+
+h3 {
+	color: white;
+}
+.panel-heading {
+	font-size: 30px;
+	text-align: center;
+	color: white;
 }
 
 h2 {
@@ -7,7 +21,12 @@ h2 {
 	background-color: gray;
 }
 
-#honda-left {
+#background {
+	height: 400px;
+	widows: auto;
+}
+
+#ryu-left {
 	position: absolute;
 	right: 100px;
 	height: 200px;
@@ -16,15 +35,14 @@ h2 {
 
 }
 
-#honda-right {
+#charlie-right {
 	position: absolute;
-	left: 100px;
+	left: 40px;
 	height: 200px;
 	width: auto;
 	padding: 10px;
 }
 
 #center-screen {
-	background-color: black;
 	height: 200px;
 }
