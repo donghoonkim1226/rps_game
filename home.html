@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- Game panel with heading -->
 <div class="container">
 	<div class="col-md-12"
 		<div id="top-panel" class="panel panel default">
@@ -31,12 +32,13 @@
 		</div>
 	</div>	
 
-
+	<!-- Character and game screen location -->
 	<div class="row">
 		<div class="col-md-4">
 			<img id="ryu-left" src ="images/ryu.gif">
 		</div>
-		<div id="center-screen" class="col-md-4">
+		<div class="col-md-4">
+			<div id="game-screen"><span></span></div>
 		</div>
 		<div class="col-md-4">
 			<img id="charlie-right" src="images/charlie.gif">
@@ -45,6 +47,7 @@
 
 	</br>
 
+	<!-- Game Buttons -->
 	<div class="row">
 		<div class="col-md-4">
 			<button class="btn btn-block btn btn-default" id="rock-btn" data-choice="rock" ><i class="fa fa-hand-rock-o fa-3x"></i></button>
@@ -56,6 +59,28 @@
 			<button class="btn btn-block btn btn-default" id="scissors-btn" data-choice="scissors"><i class="fa fa-hand-scissors-o fa-3x"></i></button>
 		</div>
 	</div>
+
+	</br>
+
+	<div class="row">
+		<div class="col-md-12">
+			<table id="score-board" class="table table-bordered">
+				<thead>
+					<tr>
+						<th class="col-md-4">USER WINS</th>
+						<th class="col-md-4">ROUNDS</th>
+						<th class="col-md-4">COMP. WINS</th>
+					</tr>
+				</thead>
+				<tbody>
+					<td id="userScore"></td>
+					<td id="roundCount"></td>
+					<td id="computerScore"></td>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
 </div>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

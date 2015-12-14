@@ -43,6 +43,22 @@ h2 {
 	padding: 10px;
 }
 
-#center-screen {
+#game-screen {
 	height: 200px;
+	background-color: gray;
+	color: black;
+	text-align: center;
+	font-size: 3em;
+
+}
+
+th {
+	text-align: center;
+	color: white;
+}
+
+td {
+	text-align: center;
+	color: white;
+	font-size: 2em;
 }
